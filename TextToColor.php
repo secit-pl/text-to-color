@@ -59,24 +59,3 @@ class TextToColor
         return sprintf("#%02X%02X%02X", $a[0], $a[1], $a[2]);
     }
 }
-
-ini_set('display_errors', 'on');
-//ini_set('error_reporting', E_ALL);
-
-
-
-printf('<span style="color: %s">%s</span>', TextToColor::toRGB($_GET['x']), $_GET['x']);
-
-?>
-
-<pre>
-    <?php
-
-    foreach(['example foo', 'example', 'foo bar', 'test','example text', 'Username'] as $text) {
-        echo $text.' - '.TextToColor::toRGB($text)."     ";
-        printf('<span style="color: %s">%s</span>', TextToColor::toRGB($text), $text);
-        echo "\n";
-    }
-
-    ?>
-</pre>
